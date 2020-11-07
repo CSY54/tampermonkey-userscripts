@@ -7,6 +7,8 @@
 // @include      https://e3new.nctu.edu.tw/*
 // @exclude      https://e3new.nctu.edu.tw/pluginfile.php/*
 // @grant        GM_addStyle
+// @updateURL    https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-dark-theme.user.js
+// @downloadURL  https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-dark-theme.user.js
 // ==/UserScript==
 
 /*

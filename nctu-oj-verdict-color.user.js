@@ -7,6 +7,8 @@
 // @match        https://oj.nctu.edu.tw/*
 // @grant        none
 // @run-at       document-start
+// @updateURL    https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/nctu-oj-verdict-color.user.js
+// @downloadURL  https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/nctu-oj-verdict-color.user.js
 // ==/UserScript==
 
 /*
