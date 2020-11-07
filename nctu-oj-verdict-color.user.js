@@ -11,11 +11,6 @@
 // @downloadURL  https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/nctu-oj-verdict-color.user.js
 // ==/UserScript==
 
-/*
- * TODO:
- * - Add color on page load
- */
-
 (function() {
   'use strict';
 
@@ -43,19 +38,21 @@
     submissions.forEach((el) => {
       el.classList.add(`verdict-${el.innerText}`);
     });
-  }
+  };
 
-  // TODO: add color after first request
-  // window.onload = () => addColor();
+  const _fetch = fetch;
+  window.fetch = (...args) => {
+    return _fetch(...args).then((res) => {
+      return new Promise((resolve, reject) => {
+        if (/^https:\/\/api.oj.nctu.edu.tw\/submissions/.test(res.url)) {
+          // add color after rendered
+          setTimeout(() => {
+            addColor();
+          }, 250);
+        }
 
-  window.setInterval = (fn, tm) => {
-    _setInterval(
-      tm == 1e4 && !registered ? () => {
-        registered = true;
-        fn();
-        addColor();
-      } : fn(),
-      tm
-    );
+        resolve(res);
+      });
+    });
   };
 })();
