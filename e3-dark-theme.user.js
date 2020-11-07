@@ -48,14 +48,14 @@
     footer {
       display: none;
     }
-    `
+  `;
 
   // add global style
   // Can't use GM_addStyle() since some font-family attributes are !important
   // GM_addStyle(styleText);
 
   // fuck those !important ==
-  const style = document.createElement('style')
+  const style = document.createElement('style');
   style.textContent = styleText;
   document.body.appendChild(style);
 })();
