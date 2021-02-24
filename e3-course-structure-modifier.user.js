@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  better, lol
 // @author       CSY54
-// @match        https://e3.nycu.edu.tw/my/
+// @match        https://e3.nycu.edu.tw/my/*
 // @updateURL    https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-course-structure-modifier.user.js
 // @downloadURL  https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-course-structure-modifier.user.js
 // ==/UserScript==
