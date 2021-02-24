@@ -49,7 +49,7 @@
       const {
         semester,
         course
-      } = /^ +(【(?<semester>\d{3} (Autumn|Spring))】)?(?<course>(\d{4})? ?.*) +$/.exec(e.innerText).groups;
+      } = /^ +(【(?<semester>\d{3} ?(Autumn|Spring|上|下))】)?(?<course>(\d{4})? ?.*) +$/.exec(e.innerText).groups;
 
       return {
         href: e.href,
@@ -67,8 +67,21 @@
       return acc;
     }, {});
 
-  const sortedKey = Object.keys(data).reverse();
-  sortedKey.push(sortedKey.shift());
+  const sortedKey = Object.keys(data)
+    .sort((lhs, rhs) => {
+      if (lhs === 'Other') {
+        return 1;
+      }
+
+      if (rhs === 'Other') {
+        return -1;
+      }
+
+      const l = lhs.replace(/(上| Autumn)/, '1');
+      const r = rhs.replace(/(下| Spring)/, '2');
+
+      return +l < +r ? 1 : -1;
+    });
 
   const genDOM = (data, key) => key
     .map((key) => {
