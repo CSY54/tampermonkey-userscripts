@@ -49,23 +49,21 @@
       const {
         semester,
         course
-      } = /^ +(【(?<semester>\d{3} ?(Autumn|Spring|上|下))】)?(?<course>(\d{4})? ?.*) +$/.exec(e.innerText).groups;
+      } = /^\s*(【(?<semester>\d{3} ?(Autumn|Spring|上|下))】)?(?<course>(\d{4})?.+?(?<! ))\s*$/.exec(e.innerText).groups;
 
       return {
         href: e.href,
         semester,
-        course: course.trim(),
+        course,
       };
     })
-    .reduce((acc, { href, semester = 'Other', course }) => {
-      if (!(semester in acc)) {
-        acc[semester] = [];
-      }
-
-      acc[semester].push({ href, course });
-
-      return acc;
-    }, {});
+    .reduce((acc, { href, semester = 'Other', course }) => ({
+      ...acc,
+      [semester]: [
+        ...acc[semester] ?? [],
+        { href, course },
+      ],
+    }), {});
 
   const sortedKey = Object.keys(data)
     .sort((lhs, rhs) => {
@@ -77,8 +75,8 @@
         return -1;
       }
 
-      const l = lhs.replace(/(上| Autumn)/, '1');
-      const r = rhs.replace(/(下| Spring)/, '2');
+      const l = lhs.replace(/(上| Autumn)/, '1').replace(/(下| Spring)/, '2');
+      const r = rhs.replace(/(上| Autumn)/, '1').replace(/(下| Spring)/, '2');
 
       return +l < +r ? 1 : -1;
     });
@@ -87,10 +85,15 @@
     .map((key) => {
       const innerHTML = data[key]
         .map(({ href, course }) => {
+          const { id, name } = /^(?<id>\d{4})?(?<name>.*)$/.exec(course).groups;
+          const prettyCourse = id
+            ? `<span style="font-family: var(--font-family-monospace)">${id}</span> ${name}`
+            : `${name}`;
+
           const a = document.createElement('a');
           a.href = href;
           a.classList.add('course-link');
-          a.textContent = `${'\u00A0'.repeat(4)}${course}${'\u00A0'.repeat(4)}`;
+          a.innerHTML = `${'\u00A0'.repeat(4)}${prettyCourse}${'\u00A0'.repeat(4)}`;
 
           const div = document.createElement('div');
           div.classList.add('layer2_right_current_course_stu_link');
