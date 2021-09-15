@@ -10,12 +10,12 @@
 // ==/UserScript==
 
 /**
- * Modify the structure of course list from:
+ * Modify the structure of the course list from:
  *
  * My Courses
- *     【109 Autumn】0000 Course 00
- *     【109 Autumn】0001 Course 01
- *     【109 Autumn】0002 Course 02
+ *     【110 Autumn】0000 Course 00
+ *     【110 Autumn】0001 Course 01
+ *     【110 Autumn】0002 Course 02
  *     ---
  *     【109 Spring】0100 Course 10
  *     【109 Spring】0101 Course 11
@@ -26,7 +26,7 @@
  *
  * Into:
  *
- * 109 Spring
+ * 110 Autumn
  *     0100 Course 10
  *     0101 Course 11
  *     0102 Course 12
