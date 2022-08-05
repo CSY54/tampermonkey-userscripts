@@ -49,7 +49,7 @@
       const {
         semester,
         course
-      } = /^\s*(【(?<semester>\d{3} ?(Autumn|Spring|上|下))】)?(?<course>(\d{4})?.+?(?<! ))\s*$/.exec(e.innerText).groups;
+      } = /^\s*(【(?<semester>\d{3} ?(Autumn|Spring|上|下))】)?(?<course>(\d+)?.+?(?<! ))\s*$/.exec(e.innerText).groups;
 
       return {
         href: e.href,
@@ -85,7 +85,7 @@
     .map((key) => {
       const innerHTML = data[key]
         .map(({ href, course }) => {
-          const { id, name } = /^(?<id>\d{4})?(?<name>.*)$/.exec(course).groups;
+          const { id, name } = /^(?<id>\d+)?(?<name>.*)$/.exec(course).groups;
           const prettyCourse = id
             ? `<span style="font-family: var(--font-family-monospace)">${id}</span> ${name}`
             : `${name}`;
