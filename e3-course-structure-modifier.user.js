@@ -5,8 +5,8 @@
 // @description  better, lol
 // @author       CSY54
 // @match        https://e3.nycu.edu.tw/my/*
-// @updateURL    https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-course-structure-modifier.user.js
-// @downloadURL  https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-course-structure-modifier.user.js
+// @updateURL    https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-course-structure-modifier.user.js
+// @downloadURL  https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-course-structure-modifier.user.js
 // ==/UserScript==
 
 /**
@@ -41,7 +41,7 @@
  *     General B
  */
 
-(function() {
+ (function() {
   'use strict';
 
   const data = [...document.querySelectorAll('#layer2_right_current_course_left .layer2_right_current_course_stu_link .course-link')]

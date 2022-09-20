@@ -7,6 +7,8 @@
 // @include      https://gitlab.*
 // @icon         https://gitlab.com/assets/favicon-72a2cad5025aa931d6ea56c3201d1f18e68a8cd39788c7c80d5b2b82aa5143ef.png
 // @grant        none
+// @updateURL    https://github.com/CSY54/tampermonkey-userscripts/raw/master/gitlab-history-button.js
+// @downloadURL  https://github.com/CSY54/tampermonkey-userscripts/raw/master/gitlab-history-button.js
 // ==/UserScript==
 
 (function() {

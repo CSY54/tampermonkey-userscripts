@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Dark Theme
-// @namespace    https://e3new.nctu.edu.tw/
+// @namespace    https://e3.nycu.edu.tw/
 // @version      0.1
 // @description  dark theme!
 // @author       CSY54
-// @include      https://e3new.nctu.edu.tw/*
-// @exclude      https://e3new.nctu.edu.tw/pluginfile.php/*
+// @include      https://e3.nycu.edu.tw/*
+// @exclude      https://e3.nycu.edu.tw/pluginfile.php/*
 // @grant        GM_addStyle
-// @updateURL    https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-dark-theme.user.js
-// @downloadURL  https://github.com/CSY54/nctu-tampermonkey-userscript/raw/master/e3-dark-theme.user.js
+// @updateURL    https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-dark-theme.user.js
+// @downloadURL  https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-dark-theme.user.js
 // ==/UserScript==
 
 /*
