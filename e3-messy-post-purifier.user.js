@@ -1,10 +1,16 @@
 // ==UserScript==
 // @name         e3 messy post purifier
 // @namespace    https://e3.nycu.edu.tw/
-// @version      0.1
+// @version      0.2
 // @description  omg
 // @author       CSY54
+// @match        https://e3.nycu.edu.tw/theme/dcpc/news/news_view.php*
 // @match        https://e3.nycu.edu.tw/mod/forum/view.php*
+// @match        https://e3.nycu.edu.tw/mod/dcpcforum/view.php*
+// @match        https://e3.nycu.edu.tw/mod/dcpcforum/discuss.php*
+// @match        https://e3.nycu.edu.tw/mod/dcpcforum/index.php*
+// @match        https://e3.nycu.edu.tw/course/view.php*
+// @match        https://e3.nycu.edu.tw/mod/folder/view.php*
 // @updateURL    https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-messy-post-purifier.user.js
 // @downloadURL  https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-messy-post-purifier.user.js
 // ==/UserScript==
@@ -42,6 +48,8 @@
     return res;
   }
 
-  const e = document.getElementById('intro')
-  e.parentNode.replaceChild(purifyDOM(e), e)
+  const elements = document.querySelectorAll('div.no-overflow')
+  for (const e of elements) {
+    e.parentNode.replaceChild(purifyDOM(e), e)
+  }
 })();
