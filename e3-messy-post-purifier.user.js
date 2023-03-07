@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         e3 messy post purifier
 // @namespace    https://e3.nycu.edu.tw/
-// @version      0.2
+// @version      0.3
 // @description  omg
 // @author       CSY54
 // @match        https://e3.nycu.edu.tw/theme/dcpc/news/news_view.php*
@@ -36,7 +36,13 @@
             res.appendChild(childNode)
             break
           }
+
           const curNode = purifyDOM(childNode)
+          if (curNode.tagName === 'A') {
+            curNode.classList.add('aalink')
+            curNode.href = childNode.href
+            curNode.target = childNode.target
+          }
           res.appendChild(curNode)
           break
         }
