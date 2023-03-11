@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         e3 messy post purifier
 // @namespace    https://e3.nycu.edu.tw/
-// @version      0.3
+// @version      0.4
 // @description  omg
 // @author       CSY54
 // @match        https://e3.nycu.edu.tw/theme/dcpc/news/news_view.php*
@@ -32,7 +32,7 @@
         }
 
         case Node.ELEMENT_NODE: {
-          if (childNode.tagName === 'IMG') {
+          if (['IMG', 'VIDEO'].includes(childNode.tagName)) {
             res.appendChild(childNode)
             break
           }
