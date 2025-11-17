@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         e3 Course Structure Modifier
-// @namespace    https://e3.nycu.edu.tw/
-// @version      0.2
+// @name         E3 Course Structure Modifier
+// @namespace    https://e3p.nycu.edu.tw/
+// @version      0.3
 // @description  better, lol
 // @author       CSY54
-// @match        https://e3.nycu.edu.tw/my/*
+// @match        https://e3p.nycu.edu.tw/my/*
 // @updateURL    https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-course-structure-modifier.user.js
 // @downloadURL  https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-course-structure-modifier.user.js
 // ==/UserScript==
