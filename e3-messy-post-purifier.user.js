@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         e3 messy post purifier
 // @namespace    https://e3.nycu.edu.tw/
-// @version      0.4
+// @version      0.5
 // @description  omg
 // @author       CSY54
 // @match        https://e3.nycu.edu.tw/theme/dcpc/news/news_view.php*
@@ -15,9 +15,7 @@
 // @downloadURL  https://github.com/CSY54/tampermonkey-userscripts/raw/master/e3-messy-post-purifier.user.js
 // ==/UserScript==
 
-(function () {
-  'use strict';
-
+;(() => {
   function purifyDOM(node) {
     const res = document.createElement(node.tagName)
     node.classList.forEach((className) => {
@@ -51,11 +49,11 @@
           console.info('ignore node:', childNode)
       }
     }
-    return res;
+    return res
   }
 
   const elements = document.querySelectorAll('div.no-overflow')
   for (const e of elements) {
     e.parentNode.replaceChild(purifyDOM(e), e)
   }
-})();
+})()

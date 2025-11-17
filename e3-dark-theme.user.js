@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dark Theme
 // @namespace    https://e3.nycu.edu.tw/
-// @version      0.1
+// @version      0.2
 // @description  dark theme!
 // @author       CSY54
 // @include      https://e3.nycu.edu.tw/*
@@ -16,9 +16,7 @@
  * - Video thumbnail got inverted
  */
 
-(function() {
-  'use strict';
-
+;(() => {
   const styleText = `
     html {
       background: #000;
@@ -50,14 +48,14 @@
     footer {
       display: none;
     }
-  `;
+  `
 
   // add global style
   // Can't use GM_addStyle() since some font-family attributes are !important
   // GM_addStyle(styleText);
 
   // fuck those !important ==
-  const style = document.createElement('style');
-  style.textContent = styleText;
-  document.body.appendChild(style);
-})();
+  const style = document.createElement('style')
+  style.textContent = styleText
+  document.body.appendChild(style)
+})()

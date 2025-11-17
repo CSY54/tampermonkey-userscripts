@@ -1,0 +1,12 @@
+{
+  "name": "tampermonkey-userscripts",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "biome lint",
+    "format": "biome format --write"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "@biomejs/biome": "2.3.6"
+  }
+}
